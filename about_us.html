@@ -7,16 +7,23 @@
 <body>
     <h1>RIDA</h1>
     <div class="menu">
-        <div class="option">
-            <a href="index.html">Home</a>
-        </div> 
-        <div class="option">
-            <a href=project_info.html>Project Info</a>
-        </div>
-        <div class="option active">
-            <a href=about_us.html>About Us</a>
-        </div>
+        <button class="option" onclick="home()">Home</button> 
+        <button class="option" onclick="project()">Project Info</button>
+        <button class="option active" onclick="about()">About Us</button>
     </div>
     <h2>About Our Team</h2>
+    <h3>Andrekious Evans</h3>
+    <h3></h3>
 </body>
+<script>
+function home() {
+    window.location.href = "index.html";
+}
+function project() {
+    window.location.href = "project_info.html";
+}
+function about() {
+    window.location.href = "about_us.html";
+}
+</script>
 </html>
