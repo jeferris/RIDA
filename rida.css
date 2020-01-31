@@ -9,13 +9,19 @@ h1 {
 h2 {
     text-align: center;
 }
+.page {
+    margin: 15px;
+}
 .menu {
     text-align: center;
+    position: sticky;
+    top: 0;
     background-color: rgb(9, 64, 90);
     color: white;
+    overflow: hidden;
 }
 .option {
-    display: inline-block;
+    float: left;
     padding: 15px 50px 15px 50px;
     background-color: rgb(9, 64, 90);
     color: white;
@@ -28,8 +34,30 @@ h2 {
 }
 .active {
     background-color: rgb(144, 190, 211);
-    color: rgb(9, 64, 90);
+    /*color: rgb(9, 64, 90);*/
+    color: white;
 }
-.border {
-    border-top: 3px dashed yellow;
+.footer {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    left: 30px;
+    text-align: center;
+}
+img {
+    width: 125px;
+}
+.header {
+    background-color: rgb(101, 147, 168);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    font-size: 30pt;
+}
+.title {
+    display: inline;
+    vertical-align: middle;
+    background-color: rgb(101, 147, 168);
+    overflow: hidden;
+    color: white;
 }
