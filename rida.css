@@ -14,7 +14,6 @@ h2 {
 }
 .menu {
     text-align: center;
-<<<<<<< HEAD
     position: sticky;
     top: 0;
     background-color: rgb(9, 64, 90);
@@ -23,13 +22,6 @@ h2 {
 }
 .option {
     float: left;
-=======
-    background-color: rgb(9, 64, 90);
-    color: white;
-}
-.option {
-    display: inline-block;
->>>>>>> 6bf5b9bfaa7b1670c8e10b8409d91fd14fb3c258
     padding: 15px 50px 15px 50px;
     background-color: rgb(9, 64, 90);
     color: white;
