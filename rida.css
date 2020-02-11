@@ -16,7 +16,10 @@ h2 {
     background-image: linear-gradient(to bottom, black, rgb(36, 36, 36, 0));
 }
 .page {
-    margin: 15px;
+    margin: 15px 60px 60px 60px;
+}
+.page img {
+    border: 8px white double;
 }
 .menu {
     text-align: center;
@@ -67,12 +70,10 @@ h2 {
 h3 {
     text-align: center;
 }
-
 #name {
     text-decoration: underline;
     text-align: center;
 }
-
 #about {
-    margin-left: 30px;
+    margin: 15px 250px 15px 250px;
 }
