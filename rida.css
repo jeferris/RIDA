@@ -10,13 +10,16 @@ h1 {
 }
 h2 {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     margin-top: 0px;
     overflow: hidden;
     background-image: linear-gradient(to bottom, black, rgb(36, 36, 36, 0));
+    font-family: 'Euphoria Script', cursive;
+    font-size: 36pt; 
 }
 .page {
     margin: 15px 60px 60px 60px;
+    font-size: 12pt;
 }
 .page img {
     border: 8px white double;
@@ -35,6 +38,7 @@ h2 {
     background-color: black;
     color: white;
     border: none;
+    font-size: 12pt;
 }
 .option:hover {
     background-color: rgb(104, 104, 104);
@@ -58,7 +62,7 @@ h2 {
     overflow: hidden;
     text-align: center;
     padding: 30px;
-    font-size: 60pt;
+    font-size: 72pt;
     
 }
 .title {
@@ -69,6 +73,7 @@ h2 {
 }
 h3 {
     text-align: center;
+    font-size: 14pt;
 }
 #name {
     text-decoration: underline;
@@ -76,4 +81,5 @@ h3 {
 }
 #about {
     margin: 15px 250px 15px 250px;
+    text-align: justify;
 }
