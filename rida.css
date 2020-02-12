@@ -7,7 +7,7 @@ body {
 h2 {
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 0px;
+    margin-top: 10px;
     overflow: hidden;
     background-image: linear-gradient(to bottom, black, rgb(36, 36, 36, 0));
     font-family: 'Euphoria Script', cursive;
@@ -77,4 +77,18 @@ h3 {
 #about {
     margin: 15px 250px 15px 250px;
     text-align: justify;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .option {
+      width: 100%;
+    }
+    .page img {
+        max-width: 95%;
+        height: auto;
+    }
+    #about {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
 }
