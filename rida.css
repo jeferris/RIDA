@@ -4,10 +4,6 @@ body {
     color: white;
     font-family: 'Gudea', sans-serif;
 }
-h1 {
-    text-align: center;
-    font-family: 'Gudea', sans-serif;
-}
 h2 {
     text-align: center;
     padding-bottom: 20px;
@@ -47,7 +43,6 @@ h2 {
 }
 .active {
     background-color: rgb(190, 157, 9);
-    /*color: rgb(9, 64, 90);*/
     color: white;
 }
 .footer {
