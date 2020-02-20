@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RIDA</string>
+    <string name="Create_Acct">Create Account</string>
+    <string name="Sign_In">Sign In</string>
+    <string name="Logo">Logo</string>
+    <string name="Description">\"The Rideshare Driver\'s all in one Social Media app\"</string>
+    <string name="No_Acct">You don\'t have an account?</string>
+    <string name="FullName">Full Name</string>
+    <string name="Phone">Phone</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Confirm_Pass">Confirm Password</string>
+    <string name="Lyft">Lyft</string>
+</resources>
