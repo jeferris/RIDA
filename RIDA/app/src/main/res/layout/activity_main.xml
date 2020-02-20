@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/logo_main"
         android:layout_width="123dp"
         android:layout_height="144dp"
         android:layout_marginStart="28dp"
@@ -18,14 +18,14 @@
         android:layout_marginEnd="260dp"
         android:layout_marginRight="260dp"
         android:contentDescription="@string/Logo"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintBottom_toTopOf="@id/name_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ridalogo" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/name_main"
         android:layout_width="229dp"
         android:layout_height="86dp"
         android:layout_marginTop="185dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/desc"
+        android:id="@+id/desc_main"
         android:layout_width="349dp"
         android:layout_height="28dp"
         android:layout_marginStart="33dp"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/no_acct"
+        android:id="@+id/no_acct_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/new_acct"
+        android:id="@+id/new_acct_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -98,10 +98,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/no_acct" />
+        app:layout_constraintTop_toBottomOf="@+id/no_acct_main" />
 
     <Button
-        android:id="@+id/sign_in"
+        android:id="@+id/sign_in_main"
         android:layout_width="134dp"
         android:layout_height="66dp"
         android:layout_marginStart="100dp"

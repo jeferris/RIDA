@@ -11,4 +11,5 @@
     <string name="Password">Password</string>
     <string name="Confirm_Pass">Confirm Password</string>
     <string name="Lyft">Lyft</string>
+    <string name="Uber">Uber</string>
 </resources>

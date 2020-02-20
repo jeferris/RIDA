@@ -14,11 +14,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button new_acct = findViewById(R.id.new_acct);
-        new_acct.setOnClickListener(new View.OnClickListener() {
+        Button new_acct_main = findViewById(R.id.new_acct_main);
+        new_acct_main.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                Intent newUserIntent = new Intent(getApplicationContext(), NewUser.class );
-                startActivity(newUserIntent);
+                Intent newAcctMainIntent = new Intent(getApplicationContext(), NewUser.class );
+                startActivity(newAcctMainIntent);
+            }
+        });
+
+        Button sign_in_main = findViewById(R.id.sign_in_main);
+        sign_in_main.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent signInMainIntent = new Intent(getApplication(), SignIn.class);
+                startActivity(signInMainIntent);
             }
         });
     }
