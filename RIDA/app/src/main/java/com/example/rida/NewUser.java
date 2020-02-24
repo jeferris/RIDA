@@ -50,7 +50,7 @@ public class NewUser extends AppCompatActivity {
                         email.compareTo("") == 0 ||
                         password.compareTo("") == 0 ||
                         conf_pass.compareTo("") == 0
-                ) {
+                    ) {
                     Toast.makeText(v.getContext(),"All fields are required.", Toast.LENGTH_LONG+4).show();
                 }
                 else if (password.compareTo(conf_pass) != 0) {
@@ -59,7 +59,7 @@ public class NewUser extends AppCompatActivity {
                     confirm_pass_newusr.setText("");
                 }
                 else if (!lyft && !uber) {
-                    Toast.makeText(v.getContext(),"You must select either Uber, Lyft, or both.", Toast.LENGTH_LONG+4).show();
+                    Toast.makeText(v.getContext(),"You must select Uber, Lyft, or both.", Toast.LENGTH_LONG+4).show();
                 }
                 else {
                     Intent createNewUsrIntent = new Intent(getApplication(), HomeActivity.class);
