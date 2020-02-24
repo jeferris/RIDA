@@ -54,7 +54,7 @@ h2 {
     width: 125px;
 }
 .header {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url('images/hexagon1.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url('images/RIDAhex.png');
     overflow: hidden;
     text-align: center;
     padding: 30px;
