@@ -15,4 +15,7 @@
     <string name="Exist_Acct">Already have an account?</string>
     <string name="Forgot_Pass">Forgot Password</string>
     <string name="Home">Home</string>
+    <string name="events">events</string>
+    <string name="business">business</string>
+    <string name="hotspots">Hotspots</string>
 </resources>
