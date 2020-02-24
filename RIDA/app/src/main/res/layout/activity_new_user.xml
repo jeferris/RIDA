@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/back_btn_newusr"
-        android:layout_width="47dp"
-        android:layout_height="38dp"
+        android:layout_width="51dp"
+        android:layout_height="48dp"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="577dp"
         android:background="@android:color/transparent"
@@ -17,26 +17,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/create"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <TextView
         android:id="@+id/create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="577dp"
         android:text="@string/Create_Acct"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
 
     <CheckBox
         android:id="@+id/lyft_newusr"
@@ -73,7 +75,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/sign_in_newusr"
+        android:id="@+id/create_acct_newusr"
         android:layout_width="134dp"
         android:layout_height="66dp"
         android:layout_marginStart="100dp"
@@ -83,14 +85,14 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="117dp"
         android:hint="@string/Email"
-        android:text="@string/Sign_In"
+        android:text="@string/Create_Acct"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/no_acct_newusr"
+        android:id="@+id/exist_acct_newusr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -98,7 +100,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="55dp"
-        android:text="@string/No_Acct"
+        android:text="@string/Exist_Acct"
         android:textColor="@android:color/tertiary_text_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/new_acct_newusr"
+        android:id="@+id/sign_in_newusr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -118,7 +120,7 @@
         android:clickable="true"
         android:focusable="true"
         android:linksClickable="true"
-        android:text="@string/Create_Acct"
+        android:text="@string/Sign_In"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textColorLink="@android:color/white"
@@ -126,7 +128,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/no_acct_newusr" />
+        app:layout_constraintTop_toBottomOf="@+id/exist_acct_newusr" />
 
     <EditText
         android:id="@+id/full_name_newusr"

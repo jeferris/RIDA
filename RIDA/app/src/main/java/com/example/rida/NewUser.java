@@ -23,9 +23,17 @@ public class NewUser extends AppCompatActivity {
             }
         });
 
+        Button create_acct_newusr = findViewById(R.id.create_acct_newusr);
+        create_acct_newusr.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent signInNewUsrIntent = new Intent(getApplication(), SignIn.class);
+                startActivity(signInNewUsrIntent);
+            }
+        });
+
         Button sign_in_newusr = findViewById(R.id.sign_in_newusr);
         sign_in_newusr.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            public void onClick(View v){
                 Intent signInNewUsrIntent = new Intent(getApplication(), SignIn.class);
                 startActivity(signInNewUsrIntent);
             }
