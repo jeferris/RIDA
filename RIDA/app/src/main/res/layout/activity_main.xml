@@ -9,6 +9,18 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/hexagon"
+        android:layout_width="539dp"
+        android:layout_height="318dp"
+        android:layout_marginBottom="438dp"
+        android:tint="#AB2B2B2B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hex_header" />
+
+    <ImageView
         android:id="@+id/logo_main"
         android:layout_width="123dp"
         android:layout_height="144dp"
@@ -115,4 +127,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

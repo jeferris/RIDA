@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class SignIn extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class SignIn extends AppCompatActivity {
 
         Button sign_in_signin = findViewById(R.id.sign_in_signin);
         sign_in_signin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent signInSigninIntent = new Intent(getApplication(), HomeActivity.class);
                 startActivity(signInSigninIntent);
             }
