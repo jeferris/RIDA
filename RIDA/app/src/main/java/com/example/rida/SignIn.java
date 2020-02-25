@@ -29,11 +29,11 @@ public class SignIn extends AppCompatActivity {
         sign_in_signin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                TextView phone_newusr = (TextView) findViewById(R.id.phone_newusr);
-                TextView password_newusr = (TextView) findViewById(R.id.password_newusr);
+                TextView phone_signin = findViewById(R.id.phone_signin);
+                TextView password_signin = findViewById(R.id.password_signin);
 
-                String phone = phone_newusr.getText().toString();
-                String password = password_newusr.getText().toString();
+                String phone = phone_signin.getText().toString();
+                String password = password_signin.getText().toString();
 
                 if (phone.compareTo("") == 0 ||
                         password.compareTo("") == 0) {
