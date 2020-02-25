@@ -8,20 +8,11 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         android:tileMode="repeat">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@android:dimen/app_icon_size"
-            android:layout_gravity="top"
-            android:background="@drawable/hex_background"
-            android:fitsSystemWindows="true"
-            android:scaleType="centerCrop"
-            android:tileMode="repeat"
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
@@ -36,7 +27,7 @@
                 android:id="@+id/home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/home_icon" />
+                android:icon="@android:drawable/btn_star" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/profile"
