@@ -37,7 +37,7 @@ public class SignIn extends AppCompatActivity {
                 String password = password_newusr.getText().toString();
 
                 if (phone.compareTo("") == 0 ||
-                        password.compareTo("") == 0) {
+                    password.compareTo("") == 0) {
                     Toast.makeText(v.getContext(), "All fields are required.", Toast.LENGTH_LONG + 4).show();
                 } else {
 
