@@ -20,7 +20,6 @@ public class SignIn extends AppCompatActivity {
         ImageButton back_btn_signin = findViewById(R.id.back_btn_signin);
         back_btn_signin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 Intent backSignInIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(backSignInIntent);
             }
