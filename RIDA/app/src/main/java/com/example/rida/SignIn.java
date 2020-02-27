@@ -26,8 +26,8 @@ public class SignIn extends AppCompatActivity {
     private EditText emailTV, passwordTV;
     private Button loginBtn;
 
-
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,6 @@ public class SignIn extends AppCompatActivity {
 
     private void loginUserAccount() {
 
-
         String email, password;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
@@ -62,22 +61,22 @@ public class SignIn extends AppCompatActivity {
         }
 
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
+            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
 
-                            Intent intent = new Intent(SignIn.this, HomeActivity.class);
-                            startActivity(intent);
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
-
-                        }
+                        Intent intent = new Intent(SignIn.this, HomeActivity.class);
+                        startActivity(intent);
                     }
-                });
+                    else {
+                        Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            });
     }
 
     private void initializeUI() {
