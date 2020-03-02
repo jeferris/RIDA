@@ -16,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class OldHomeActivity extends AppCompatActivity {
 
     public class AccountFragment extends Fragment {
         // When requested, this adapter returns a DemoObjectFragment,
@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         AccountFragment accountFragment;
         ViewPager viewPager;
 
-        @Nullable
+        /* @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater,
                                  @Nullable ViewGroup container,
@@ -37,12 +37,12 @@ public class HomeActivity extends AppCompatActivity {
             demoCollectionPagerAdapter = new DemoCollectionPagerAdapter(getChildFragmentManager());
             viewPager = view.findViewById(R.id.pager);
             viewPager.setAdapter(demoCollectionPagerAdapter);
-        }
+        } */
     }
 
     // Since this is an object collection, use a FragmentStatePagerAdapter,
 // and NOT a FragmentPagerAdapter.
-    public class DemoCollectionPagerAdapter extends FragmentStatePagerAdapter {
+    /*public class DemoCollectionPagerAdapter extends FragmentStatePagerAdapter {
         public DemoCollectionPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -85,6 +85,6 @@ public class HomeActivity extends AppCompatActivity {
             ((TextView) view.findViewById(android.R.id.text1))
                     .setText(Integer.toString(args.getInt(ARG_OBJECT)));
         }
-    }
+    }*/
 
 }

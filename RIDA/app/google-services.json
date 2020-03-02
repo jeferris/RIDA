@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "612578554282",
+    "firebase_url": "https://rida-b89c2.firebaseio.com",
+    "project_id": "rida-b89c2",
+    "storage_bucket": "rida-b89c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612578554282:android:6c45628cf6c7c92b1cbbd3",
+        "android_client_info": {
+          "package_name": "com.example.rida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612578554282-3rjishq4vo25lppvq3c46s6r1h582m7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rida",
+            "certificate_hash": "c7516d4a35bdf403edd697d5eef5a7f57f2ad590"
+          }
+        },
+        {
+          "client_id": "612578554282-2lflv1stqamomr7rgs09267747o04175.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQhbHxVuqizYHmYLVT1VIUD17lyJAx2Sk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612578554282-2lflv1stqamomr7rgs09267747o04175.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

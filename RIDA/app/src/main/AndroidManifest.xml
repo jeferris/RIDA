@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rida">
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- this line adds the required permission request -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".HomeActivity"></activity>
+        <activity
+            android:name=".LandingActivity"
+            android:label="@string/title_activity_landing"></activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".SignIn" />
         <activity android:name=".NewUser" />
         <activity android:name=".MainActivity">

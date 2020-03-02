@@ -12,11 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class UserStartFragment extends Fragment {
+public class OldUserStartFragment extends Fragment {
 
-    private UserStartViewModel mViewModel;
+   // private UserStartViewModel mViewModel;
 
-    public static UserStartFragment newInstance() {
+    /*public static UserStartFragment newInstance() {
         return new UserStartFragment();
     }
 
@@ -29,8 +29,8 @@ public class UserStartFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(UserStartViewModel.class);
+        //mViewModel = ViewModelProviders.of(this).get(UserStartViewModel.class);
         // TODO: Use the ViewModel
-    }
+    }*/
 
 }
