@@ -11,44 +11,254 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_navigation_home_self"
-            app:destination="@+id/navigation_dashboard"
+            android:id="@+id/action_navigation_home_to_self"
+            app:destination="@+id/navigation_home"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@+id/navigation_dashboard" />
+            app:popUpTo="@+id/navigation_home" />
         <action
-            android:id="@+id/action_navigation_home_self2"
-            app:destination="@id/navigation_home"
+            android:id="@+id/action_navigation_home_to_navigation_events"
+            app:destination="@id/navigation_events"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_home" />
         <action
-            android:id="@+id/action_navigation_home_to_navigation_notifications"
-            app:destination="@id/navigation_notifications"
+            android:id="@+id/action_navigation_home_to_navigation_expenses"
+            app:destination="@id/navigation_expenses"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/navigation_notifications" />
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_menu"
+            app:destination="@id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_hotspots"
+            app:destination="@id/navigation_hotspots"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_home" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_events"
         android:name="com.example.rida.ui.events.EventsFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:label="@string/Events"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_events_to_self"
+            app:destination="@+id/navigation_events"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_events" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_events" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_expenses"
+            app:destination="@id/navigation_expenses"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_events" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_menu"
+            app:destination="@id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_events" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_events" />
+        <action
+            android:id="@+id/action_navigation_events_to_navigation_hotspots"
+            app:destination="@id/navigation_hotspots"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_events" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_expenses"
-        android:name="com.example.rida.EventsFragment"
+        android:name="com.example.rida.ExpensesFragment"
         android:label="@string/Expenses"
-        tools:layout="@layout/fragment_events" />
+        tools:layout="@layout/fragment_expenses" >
+        <action
+            android:id="@+id/action_navigation_expenses_to_self"
+            app:destination="@+id/navigation_expenses"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_expenses" />
+        <action
+            android:id="@+id/action_navigation_expenses_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_expenses" />
+        <action
+            android:id="@+id/action_navigation_expenses_to_navigation_events"
+            app:destination="@+id/navigation_events"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_expenses" />
+        <action
+            android:id="@+id/action_navigation_expenses_to_navigation_hotspots"
+            app:destination="@id/navigation_hotspots"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_expenses" />
+        <action
+            android:id="@+id/action_navigation_expenses_to_navigation_menu"
+            app:destination="@id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_expenses" />
+        <action
+            android:id="@+id/action_navigation_expenses_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_expenses" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_hotspots"
+        android:name="com.example.rida.HotspotsFragment"
         android:label="@string/Hotspots"
-        tools:layout="@layout/fragment_hotspots" />
-
+        tools:layout="@layout/fragment_hotspots" >
+        <action
+            android:id="@+id/action_navigation_hotspots_to_self"
+            app:destination="@+id/navigation_hotspots"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_events"
+            app:destination="@+id/navigation_events"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_expenses"
+            app:destination="@id/navigation_expenses"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_menu"
+            app:destination="@id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile"
+        android:name="com.example.rida.ProfileFragment"
         android:label="@string/Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_self"
+            app:destination="@+id/navigation_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_events"
+            app:destination="@+id/navigation_events"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_expenses"
+            app:destination="@id/navigation_expenses"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_menu"
+            app:destination="@id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_hotspots"
+            app:destination="@id/navigation_hotspots"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.example.rida.MenuFragment"
+        android:label="@string/Menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_navigation_menu_to_self"
+            app:destination="@+id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_events"
+            app:destination="@+id/navigation_events"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_expenses"
+            app:destination="@id/navigation_expenses"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_menu"
+            app:destination="@id/navigation_menu"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+        <action
+            android:id="@+id/action_navigation_hotspots_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/navigation_hotspots" />
+    </fragment>
+
 </navigation>
