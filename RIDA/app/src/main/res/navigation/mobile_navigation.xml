@@ -29,8 +29,8 @@
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_home" />
         <action
-            android:id="@+id/action_navigation_home_to_navigation_menu"
-            app:destination="@id/navigation_menu"
+            android:id="@+id/action_navigation_home_to_navigation_more"
+            app:destination="@id/navigation_more"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_home" />
@@ -52,7 +52,7 @@
         android:id="@+id/navigation_events"
         android:name="com.example.rida.ui.events.EventsFragment"
         android:label="@string/Events"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_expenses" >
         <action
             android:id="@+id/action_navigation_events_to_self"
             app:destination="@+id/navigation_events"
@@ -72,8 +72,8 @@
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_events" />
         <action
-            android:id="@+id/action_navigation_events_to_navigation_menu"
-            app:destination="@id/navigation_menu"
+            android:id="@+id/action_navigation_events_to_navigation_more"
+            app:destination="@id/navigation_more"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_events" />
@@ -121,8 +121,8 @@
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_expenses" />
         <action
-            android:id="@+id/action_navigation_expenses_to_navigation_menu"
-            app:destination="@id/navigation_menu"
+            android:id="@+id/action_navigation_expenses_to_navigation_more"
+            app:destination="@id/navigation_more"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_expenses" />
@@ -164,8 +164,8 @@
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_hotspots" />
         <action
-            android:id="@+id/action_navigation_hotspots_to_navigation_menu"
-            app:destination="@id/navigation_menu"
+            android:id="@+id/action_navigation_hotspots_to_navigation_more"
+            app:destination="@id/navigation_more"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/navigation_hotspots" />
