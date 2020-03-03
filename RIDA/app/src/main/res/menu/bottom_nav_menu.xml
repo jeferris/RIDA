@@ -9,10 +9,6 @@
         android:visible="true" />
 
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/profile"
-        android:title="@string/Profile" />
-    <item
         android:id="@+id/navigation_events"
         android:icon="@drawable/event"
         android:title="@string/Events" />
@@ -26,8 +22,8 @@
         android:icon="@drawable/hotspot"
         android:title="@string/Hotspots" />
     <item
-        android:id="@+id/navigation_menu"
-        android:icon="@drawable/menu"
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/more"
         android:title="@string/Menu" />
 
 </menu>
