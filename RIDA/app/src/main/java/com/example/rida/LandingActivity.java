@@ -17,10 +17,10 @@ public class LandingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        // Passing each more ID as a set of Ids because each
+        // more should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_events, R.id.navigation_expenses, R.id.navigation_hotspots, R.id.navigation_profile)
+                R.id.navigation_home, R.id.navigation_events, R.id.navigation_expenses, R.id.navigation_hotspots, R.id.navigation_more)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
