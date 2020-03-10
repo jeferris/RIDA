@@ -67,9 +67,9 @@ public class SignIn extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
-
-                        Intent intent = new Intent(SignIn.this, LandingActivity.class);
-                        startActivity(intent);
+                        //Intent intent = new Intent(SignIn.this, LandingActivity.class);
+                        Intent landingActivityIntent = new Intent(SignIn.this, LandingActivity.class);
+                        startActivity(landingActivityIntent);
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
