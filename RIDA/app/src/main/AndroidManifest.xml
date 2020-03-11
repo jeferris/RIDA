@@ -11,12 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity
-            android:name=".LandingActivity"
-            android:label="@string/title_activity_landing"></activity>
-        <activity android:name=".HomeActivity" />
+
+        <activity android:name=".LandingActivity"/>
+<!--        <activity-->
+<!--            android:name=".LandingActivity"-->
+<!--            android:label="@string/title_activity_landing"></activity>-->
+<!--        <activity android:name=".HomeActivity" />-->
         <activity android:name=".SignIn" />
         <activity android:name=".NewUser" />
+        <activity android:name=".Events" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
