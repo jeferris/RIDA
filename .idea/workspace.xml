@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5a44065-372f-4ef6-acc2-15a69000ca1f" name="Default Changelist" comment="testing to make sure I know how to commit from android studio">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/java/com/example/rida/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/java/com/example/rida/Events.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/java/com/example/rida/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/java/com/example/rida/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/res/layout/activity_landing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/res/layout/activity_landing.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/res/layout/events.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/res/layout/events.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RIDA/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RIDA/app/src/main/res/values/styles.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e5a44065-372f-4ef6-acc2-15a69000ca1f" name="Default Changelist" comment="testing to make sure I know how to commit from android studio" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_R" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -42,14 +29,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="width" value="981" />
-    <option name="height" value="1020" />
-  </component>
   <component name="ProjectId" id="1YhHZzxkOr4c0f53UnrlN6s3cE5" />
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
