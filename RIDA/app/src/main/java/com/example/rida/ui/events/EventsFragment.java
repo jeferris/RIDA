@@ -43,11 +43,17 @@ public class EventsFragment extends Fragment {
     TextView introtxt;
     WeekViewSwipeable wvs;
     WeekViewAdapter<Boolean> adapter;
-    Context context;
+    private Context mContext;
     private EventsViewModel eventsViewModel;
     public EventsFragment(){
         //empty public constructor
     }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,7 +66,7 @@ public class EventsFragment extends Fragment {
         //setSupportActionBar(toolbar);
         introtxt = (TextView)v.findViewById(R.id.helloworld);
         //Sample data
-        List<Boolean> data = Arrays.asList(true, false, true, false, true, true);
+        List<Boolean> data = Arrays.asList(false, false, false, false, false, false);
         introtxt.setText("Dataset: \n " + Arrays.toString(data.toArray()));
         wvs = (WeekViewSwipeable)v.findViewById(R.id.calendar_component);
 
@@ -69,13 +75,13 @@ public class EventsFragment extends Fragment {
 
 
         adapter = new WeekViewAdapter(data) {
-            /*@Override
+            @Override
             public int getStrokeColor(final int index){
                 //Override this to change circle stroke color
                 if ((Boolean) get(index)==true){
-                    return ContextCompat.getColor(context, R.color.teal);
+                    return ContextCompat.getColor(mContext, R.color.teal);
                 } else {
-                    return ContextCompat.getColor(context, R.color.darkgray);
+                    return ContextCompat.getColor(mContext, R.color.darkgray);
                 }
             }
 
@@ -83,9 +89,9 @@ public class EventsFragment extends Fragment {
             public int getFillColor(final int index){
                 //Override to change circle fill color
                 if ((Boolean) get(index)==true){
-                    return ContextCompat.getColor(context, R.color.teal);
+                    return ContextCompat.getColor(mContext, R.color.teal);
                 } else {
-                    return ContextCompat.getColor(context, R.color.darkgray);
+                    return ContextCompat.getColor(mContext, R.color.darkgray);
                 }
             }
 
@@ -116,7 +122,7 @@ public class EventsFragment extends Fragment {
                     }
                 });
                 return dv;
-            }*/
+            }
         };
         wvs.setAdapter(adapter);
         return v;
