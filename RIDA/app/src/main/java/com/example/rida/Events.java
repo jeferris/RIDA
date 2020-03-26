@@ -1,197 +1,106 @@
 package com.example.rida;
 
-
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.content.Context;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import com.yuncun.swipeableweekview.CircleView;
-import com.yuncun.swipeableweekview.WeekViewAdapter;
-import com.yuncun.swipeableweekview.WeekViewSwipeable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import java.util.Arrays;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
+
+import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.model.CalendarEvent;
+import devs.mulham.horizontalcalendar.utils.CalendarEventsPredicate;
+import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 public class Events extends AppCompatActivity {
 
+    private HorizontalCalendar horizontalCalendar;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.events);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        //final Context context = this;
+        /* start 2 months ago from now */
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(Calendar.MONTH, -2);
 
-        //Sample data
-        //List<Boolean> data = Arrays.asList(true, false, true, false, true, true);
-        //introtxt.setText("Dataset: \n " + Arrays.toString(data.toArray()));
+        /* end after 2 months from now */
+        Calendar endDate = Calendar.getInstance();
+        endDate.add(Calendar.MONTH, 2);
 
+        // Default Date set to Today.
+        final Calendar defaultSelectedDate = Calendar.getInstance();
 
-//        WeekViewAdapter<Boolean> adapter = new WeekViewAdapter(data) {
-//            @Override
-//            public int getStrokeColor(final int index){
-//                //Override this to change circle stroke color
-//                if ((Boolean) get(index)==true){
-//                    return ContextCompat.getColor(context, R.color.teal);
-//                } else {
-//                    return ContextCompat.getColor(context, R.color.darkgray);
-//                }
-//            }
-//
-//            @Override
-//            public int getFillColor(final int index){
-//                //Override to change circle fill color
-//                if ((Boolean) get(index)==true){
-//                    return ContextCompat.getColor(context, R.color.teal);
-//                } else {
-//                    return ContextCompat.getColor(context, R.color.darkgray);
-//                }
-//            }
-//
-//            @Override
-//            public TextView getTextView(TextView tv, int index){
-//                //Gives you access to TextView
-//                if ((Boolean) get(index)==true){
-//                    tv.setText("Hit");
-//                } else {
-//                    tv.setText("Miss");
-//                }
-//                return tv;
-//            }
-//
-//            @Override
-//            public CircleView getCircleView(CircleView cv, int index){
-//                //Gives you access to CircleView
-//                return cv;
-//            }
-//
-//            @Override
-//            public View getDayLayout(View dv, final int index){
-//                //Returns entire dayview. This could be useful for setting an onclicklistener, for example
-//                dv.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Toast.makeText(view.getContext(), "Click! on index " + index, Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//                return dv;
-//            }
-//        };
-//        //wvs.setAdapter(adapter);
-    }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
+                .range(startDate, endDate)
+                .datesNumberOnScreen(5)
+                .configure()
+                .formatTopText("MMM")
+                .formatMiddleText("dd")
+                .formatBottomText("EEE")
+                .showTopText(true)
+                .showBottomText(true)
+                .textColor(Color.LTGRAY, Color.WHITE)
+                .colorTextMiddle(Color.LTGRAY, Color.parseColor("#ffd54f"))
+                .end()
+                .defaultSelectedDate(defaultSelectedDate)
+                .addEvents(new CalendarEventsPredicate() {
 
-}
-
-/*
-package com.example.rida;
-
-
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
-
-import com.yuncun.swipeableweekview.CircleView;
-import com.yuncun.swipeableweekview.WeekViewAdapter;
-import com.yuncun.swipeableweekview.WeekViewSwipeable;
-
-import java.util.Arrays;
-import java.util.List;
-
-public class Events extends AppCompatActivity {
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.events);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        TextView introtxt = (TextView) findViewById(R.id.helloworld);
-        final Context context = this;
-
-        //Sample data
-        List<Boolean> data = Arrays.asList(true, false, true, false, true, true);
-        introtxt.setText("Dataset: \n " + Arrays.toString(data.toArray()));
-        WeekViewSwipeable wvs = (WeekViewSwipeable) findViewById(R.id.calendar_component);
-
-        WeekViewAdapter<Boolean> adapter = new WeekViewAdapter(data) {
-            @Override
-            public int getStrokeColor(final int index){
-                //Override this to change circle stroke color
-                if ((Boolean) get(index)==true){
-                    return ContextCompat.getColor(context, R.color.teal);
-                } else {
-                    return ContextCompat.getColor(context, R.color.darkgray);
-                }
-            }
-
-            @Override
-            public int getFillColor(final int index){
-                //Override to change circle fill color
-                if ((Boolean) get(index)==true){
-                    return ContextCompat.getColor(context, R.color.teal);
-                } else {
-                    return ContextCompat.getColor(context, R.color.darkgray);
-                }
-            }
-
-            @Override
-            public TextView getTextView(TextView tv, int index){
-                //Gives you access to TextView
-                if ((Boolean) get(index)==true){
-                    tv.setText("Hit");
-                } else {
-                    tv.setText("Miss");
-                }
-                return tv;
-            }
-
-            @Override
-            public CircleView getCircleView(CircleView cv, int index){
-                //Gives you access to CircleView
-                return cv;
-            }
-
-            @Override
-            public View getDayLayout(View dv, final int index){
-                //Returns entire dayview. This could be useful for setting an onclicklistener, for example
-                dv.setOnClickListener(new View.OnClickListener() {
+                    Random rnd = new Random();
                     @Override
-                    public void onClick(View view) {
-                        Toast.makeText(view.getContext(), "Click! on index " + index, Toast.LENGTH_LONG).show();
+                    public List<CalendarEvent> events(Calendar date) {
+                        List<CalendarEvent> events = new ArrayList<>();
+                        int count = rnd.nextInt(6);
+
+                        for (int i = 0; i <= count; i++){
+                            events.add(new CalendarEvent(Color.rgb(rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)), "event"));
+                        }
+
+                        return events;
                     }
-                });
-                return dv;
+                })
+                .build();
+
+        Log.i("Default Date", DateFormat.format("EEE, MMM d, yyyy", defaultSelectedDate).toString());
+
+        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
+            @Override
+            public void onDateSelected(Calendar date, int position) {
+                String selectedDateStr = DateFormat.format("EEE, MMM d, yyyy", date).toString();
+                Toast.makeText(Events.this, selectedDateStr + " selected!", Toast.LENGTH_SHORT).show();
+                Log.i("onDateSelected", selectedDateStr + " - Position = " + position);
             }
-        };
-        wvs.setAdapter(adapter);
+
+        });
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                horizontalCalendar.goToday(false);
+            }
+        });
+
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -214,11 +123,3 @@ public class Events extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
-
-
- */
-
-
-
