@@ -1,35 +1,67 @@
 package com.example.rida.ui.events;
 
+
+
+import android.graphics.Color;
 import android.os.Bundle;
+//import android.support.v4.app.Fragment;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+
+import java.util.Calendar;
+
+import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 import com.example.rida.R;
 
 public class EventsFragment extends Fragment {
 
-    private EventsViewModel eventsViewModel;
+    private HorizontalCalendar horizontalCalendar;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        eventsViewModel =
-                ViewModelProviders.of(this).get(EventsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_expenses, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        eventsViewModel.getText().observe(this, new Observer<String>() {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_events, container, false);
+
+        /* start before 1 month from now */
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(Calendar.MONTH, -0);
+
+        /* end after 1 month from now */
+        Calendar endDate = Calendar.getInstance();
+        endDate.add(Calendar.MONTH, 1);
+
+        horizontalCalendar = new HorizontalCalendar.Builder(rootView, R.id.calendarView)
+                .range(startDate, endDate)
+                .datesNumberOnScreen(5)
+                .configure()
+                .formatTopText("MMM")
+                .formatMiddleText("dd")
+                .formatBottomText("EEE")
+                .textSize(14f, 24f, 14f)
+                .showTopText(true)
+                .showBottomText(true)
+                .textColor(Color.LTGRAY, Color.BLACK)
+                //.selectorColor()
+                .end()
+                .build();
+
+        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onDateSelected(Calendar date, int position) {
+                Toast.makeText(getContext(), DateFormat.format("EEE, MMM d, yyyy", date) + " is selected!", Toast.LENGTH_SHORT).show();
             }
+
         });
-        return root;
+
+        return rootView;
     }
+
 }
