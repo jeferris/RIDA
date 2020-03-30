@@ -7,13 +7,34 @@
     android:fitsSystemWindows="true"
     tools:context=".Events">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    <devs.mulham.horizontalcalendar.HorizontalCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:textColorSelected="#FFFF"
+        app:sizeBottomText="14sp"
+        app:sizeMiddleText="20sp"/>
+
     <fragment
         android:id="@+id/eventsFragment"
         android:name="com.example.rida.ui.events.EventsFragment"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
 
-<!--    <android.support.design.widget.AppBarLayout-->
+    <!--    <android.support.design.widget.AppBarLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:theme="@style/AppTheme.AppBarOverlay">-->
