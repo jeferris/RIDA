@@ -25,17 +25,24 @@
 
 
 </android.support.design.widget.CoordinatorLayout>
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".EventsFragment">-->
 
-<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:text="@string/hello_blank_fragment" />-->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Events">
 
-<!--</FrameLayout>-->
+    <com.yuncun.swipeableweekview.WeekViewSwipeable
+        android:id="@+id/calendar_component"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:circleDefaultFillColor="@color/grey_500"
+        app:circleDefaultStrokeColor="@color/grey_500"
+        app:circleDefaultTextColor="@color/grey_750"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>-->
