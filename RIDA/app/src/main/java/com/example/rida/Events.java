@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import
 import com.yuncun.swipeableweekview.CircleView;
 import com.yuncun.swipeableweekview.WeekViewAdapter;
 import com.yuncun.swipeableweekview.WeekViewSwipeable;
