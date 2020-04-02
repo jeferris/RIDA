@@ -31,5 +31,9 @@
     <string name="Hotspots">Hotspots</string>
     <string name="Menu">Menu</string>
     <string name="Profile">Profile</string>
-    <string name="More">More</string>
+    <string name="messages_button_name">messages_button_name</string>
+    <string name="settings_button_name">settings_button_name</string>
+    <string name="profile_button_name">profile_button_name</string>
+    <string name="help_button_name">help_button_name</string>
+    <string name="signout_button_name">signout_button_name</string>
 </resources>
