@@ -152,10 +152,10 @@
             app:popUpTo="@id/navigation_hotspots" />
     </fragment>
     <fragment
-        android:id="@+id/navigation_more"
+        android:id="@+id/navigation_menu"
         android:name="com.example.rida.ui.more.MoreFragment"
-        android:label="@string/More"
-        tools:layout="@layout/fragment_more">
+        android:label="@string/Menu"
+        tools:layout="@layout/fragment_more" >
         <action
             android:id="@+id/action_navigation_more_to_self"
             app:destination="@+id/navigation_more"
