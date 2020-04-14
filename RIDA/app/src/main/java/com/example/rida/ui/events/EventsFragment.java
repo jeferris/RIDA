@@ -13,9 +13,14 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Random;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.model.CalendarEvent;
+import devs.mulham.horizontalcalendar.utils.CalendarEventsPredicate;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 import com.example.rida.R;
@@ -51,6 +56,20 @@ public class EventsFragment extends Fragment {
                 .textColor(Color.LTGRAY, Color.BLACK)
                 //.selectorColor()
                 .end()
+                .addEvents(new CalendarEventsPredicate() {
+
+                    Random rnd = new Random();
+                    @Override
+                    public List<CalendarEvent> events(Calendar date) {
+                        List<CalendarEvent> events = new ArrayList<>();
+                        int count = rnd.nextInt(6);
+
+                        for (int i = 0; i <= count; i++){
+                            events.add(new CalendarEvent(Color.rgb(rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)), "event"));
+                        }
+                        return events;
+                    }
+                })
                 .build();
 
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
@@ -58,10 +77,15 @@ public class EventsFragment extends Fragment {
             public void onDateSelected(Calendar date, int position) {
                 Toast.makeText(getContext(), DateFormat.format("EEE, MMM d, yyyy", date) + " is selected!", Toast.LENGTH_SHORT).show();
             }
-
         });
 
+/*        builder.addEvents(new CalendarEventsPredicate() {
+
+            @Override
+            public List<CalendarEvent> events(Calendar date) {
+                // test the date and return a list of CalendarEvent to assosiate with this Date.
+            }
+        });*/
         return rootView;
     }
-
 }
