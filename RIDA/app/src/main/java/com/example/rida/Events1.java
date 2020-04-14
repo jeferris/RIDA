@@ -11,11 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Events1 extends AppCompatActivity {
 
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    /*@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.events);
+        setContentView(R.layout.events);*/
 
         //final Context context = this;
 
@@ -75,12 +75,12 @@ public class Events1 extends AppCompatActivity {
 //            }
 //        };
 //        //wvs.setAdapter(adapter);
-    }
+   /* }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
+    }*/
 
 }
 

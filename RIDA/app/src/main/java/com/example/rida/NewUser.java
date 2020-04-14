@@ -26,6 +26,14 @@ public class NewUser extends AppCompatActivity {
     private EditText emailTV, passwordTV, full_nameTV, phone_numberTV, confirm_pass_newusrTV;
     private Button regBtn;
 
+    public EditText getEmailTV() {
+        return emailTV;
+    }
+
+    public EditText getPasswordTV() {
+        return passwordTV;
+    }
+
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
