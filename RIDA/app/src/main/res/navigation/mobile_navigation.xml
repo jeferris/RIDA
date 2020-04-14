@@ -117,9 +117,9 @@
 
     <fragment
         android:id="@+id/navigation_hotspots"
-        android:name="com.example.rida.ui.hotspots.HotspotsFragment"
+        android:name="com.example.rida.ui.hotspots.MapsActivity"
         android:label="@string/Hotspots"
-        tools:layout="@layout/fragment_hotspots" >
+        tools:layout="@layout/activity_maps">
         <action
             android:id="@+id/action_navigation_hotspots_to_self"
             app:destination="@+id/navigation_hotspots"

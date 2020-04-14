@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 
+import com.example.rida.ui.events.EventsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -67,7 +68,7 @@ public class SignIn extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
                         //Intent intent = new Intent(SignIn.this, LandingActivity.class);
-                        Intent landingActivityIntent = new Intent(SignIn.this, Events.class);
+                        Intent landingActivityIntent = new Intent(SignIn.this, LandingActivity.class);
                         startActivity(landingActivityIntent);
                     }
                     else {
