@@ -1,1 +1,4 @@
 /build
+/src/release
+/src/main/res/values/strings.xml
+/src/main/res/AndroidManifest.xml

@@ -91,10 +91,10 @@
             app:popUpTo="@+id/navigation_expenses" />
         <action
             android:id="@+id/action_navigation_expenses_to_navigation_home"
-            app:destination="@id/navigation_home"
+            app:destination="@+id/navigation_home"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/navigation_expenses" />
+            app:popUpTo="@+id/navigation_expenses" />
         <action
             android:id="@+id/action_navigation_expenses_to_navigation_events"
             app:destination="@+id/navigation_events"
@@ -117,9 +117,9 @@
 
     <fragment
         android:id="@+id/navigation_hotspots"
-        android:name="com.example.rida.ui.hotspots.MapsActivity"
+        android:name="com.example.rida.ui.hotspots.HotspotsFragment"
         android:label="@string/Hotspots"
-        tools:layout="@layout/activity_maps">
+        tools:layout="@layout/fragment_hotspots">
         <action
             android:id="@+id/action_navigation_hotspots_to_self"
             app:destination="@+id/navigation_hotspots"
@@ -128,7 +128,7 @@
             app:popUpTo="@+id/navigation_hotspots" />
         <action
             android:id="@+id/action_navigation_hotspots_to_navigation_events"
-            app:destination="@+id/navigation_events"
+            app:destination="@id/navigation_events"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@+id/navigation_hotspots" />

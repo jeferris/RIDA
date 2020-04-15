@@ -3,18 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapsActivity">
+    android:layout_weight="2"
+    tools:context=".ui.hotspots.HotspotsFragment"
+    tools:targetApi="@string/google_api_key">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <fragment
+        android:id="@+id/frag"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:text="@string/Hotspots" />
+        tools:layout="@layout/fragment_hotspots"
+        tools:targetApi="@string/google_maps_key" />
 
 </FrameLayout>

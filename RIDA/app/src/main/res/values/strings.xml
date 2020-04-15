@@ -36,4 +36,6 @@
     <string name="profile_button_name">profile_button_name</string>
     <string name="help_button_name">help_button_name</string>
     <string name="signout_button_name">signout_button_name</string>
+    <string name="title_activity_maps">Hotspots</string>
+    <string name="More">More</string>
 </resources>
