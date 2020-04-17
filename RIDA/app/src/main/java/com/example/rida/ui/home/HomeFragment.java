@@ -4,32 +4,49 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import android.view.*;
+import androidx.fragment.app.*;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.rida.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    public HomeFragment() {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        viewPager = (ViewPager) root.findViewById(R.id.appbar);
+        viewPager.setAdapter(new C);
+        tabLayout = (TabLayout) root.findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+
         return root;
     }
 }

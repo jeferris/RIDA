@@ -7,12 +7,14 @@
     tools:context=".ui.hotspots.HotspotsFragment"
     tools:targetApi="@string/google_api_key">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frag"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_hotspots"
-        tools:targetApi="@string/google_maps_key" />
+        tools:targetApi="@string/google_maps_key">
+
+    </androidx.fragment.app.FragmentContainerView>
 
 </FrameLayout>
