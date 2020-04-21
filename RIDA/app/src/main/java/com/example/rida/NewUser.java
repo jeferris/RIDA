@@ -59,7 +59,7 @@ public class NewUser extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef;
-        myRef = database.getReference("message");
+        myRef = database.getReference();
         String email, password, full_name, phone_number, confirm_pass;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
@@ -67,7 +67,7 @@ public class NewUser extends AppCompatActivity {
         phone_number = phone_numberTV.getText().toString();
         confirm_pass = confirm_pass_newusrTV.getText().toString();
         User u = new User(full_name, email, password, phone_number);
-        myRef.child("users").child(full_name).setValue(full_name);
+        myRef.child("users").child(full_name).setValue(u);
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
