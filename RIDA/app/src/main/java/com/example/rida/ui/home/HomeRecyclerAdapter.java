@@ -8,16 +8,67 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.rida.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
+
+
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
 
-    /*private void onCreate() {
+    private class Post {
+        private String author;
+        private String contents;
+        private String timestamp;
+
+        public Post() {
+            this.author = "Author";
+            this.contents = "Content";
+            this.timestamp = "Date and Time";
+        }
+
+        public Post(String author, String contents, String timestamp) {
+            this.author = author;
+            this.contents = contents;
+            this.timestamp = timestamp;
+
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+
+        public String getContents() {
+            return contents;
+        }
+
+        public String getTimestamp() {
+            return timestamp;
+        }
+
+        public void setAuthor(String author) {
+            this.author = author;
+        }
+
+        public void setContents(String contents) {
+            this.contents = contents;
+        }
+
+        public void setTimestamp(String timestamp) {
+            this.timestamp = timestamp;
+        }
+    }
+
+    /*private class Feed {
+
+    }*/
+   /* private void onCreate() {
+
 
     }
 
-    private View onCreateView(Bundle savedInstanceState, LayoutInflater inflater, ViewGroup container) {
+    /*private View onCreateView(Bundle savedInstanceState, LayoutInflater inflater, ViewGroup container) {
         return inflater.inflate();
     }*/
 
@@ -60,6 +111,12 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef;
+        myRef = database.getReference();
+        Post p = new Post("charlie", "hey friends", "yesterday");
+        myRef.child("newsfeed").setValue(p);
+
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.content_posts, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(v);
