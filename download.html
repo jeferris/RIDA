@@ -6,14 +6,18 @@
     <link href="https://fonts.googleapis.com/css?family=Gudea|Euphoria+Script&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-    <body>
-        <div class="menu">
-            <button class="option active" onclick="home()">Home</button> 
-            <button class="option" onclick="project()">Project Info</button>
-            <button class="option" onclick="about()">About Us</button>
-            <button class="option" onclick="about()">Download</button>
-        </div>
-    </body>
+<body>
+    <div class="header">
+        <img id="logo" class="title" src="images/RIDAlogo.png">
+        <p class="title">RIDA</p>
+    </div>
+    <div class="menu">
+        <button class="option active" onclick="home()">Home</button> 
+        <button class="option" onclick="project()">Project Info</button>
+        <button class="option" onclick="about()">About Us</button>
+        <button class="option" onclick="about()">Download</button>
+     </div>
+</body>
 <script>
 function home() {
     window.location.href = "index.html";
