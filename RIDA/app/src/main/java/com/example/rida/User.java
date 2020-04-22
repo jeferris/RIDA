@@ -8,10 +8,10 @@ public class User {
 
 
     public User() {
-        this.full_name = "Full  Name";
-        this.email = "sample@email.com";
-        this.password = "password";
-        this.phone_number = "1234567890";
+        this.full_name = "";
+        this.email = "";
+        this.password = "";
+        this.phone_number = "";
     }
 
 
