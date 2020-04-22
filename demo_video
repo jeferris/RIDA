@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>RIDA - Demonstation Video</title>
+    <link rel="stylesheet" type="text/css" href="rida.css">
+    <link href="https://fonts.googleapis.com/css?family=Gudea|Euphoria+Script&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="header">
+        <img id="logo" class="title" src="images/RIDAlogo.png">
+        <p class="title">RIDA</p>
+    </div>
+    <div class="menu">
+        <button class="option" onclick="home()">Home</button> 
+        <button class="option" onclick="project()">Project Info</button>
+        <button class="option" onclick="about()">About Us</button>
+        <button class="option active" onclick="demo()">Demonstration Video</button>
+        <button class="option" onclick="download()">Download</button>
+     </div>
+    <h2>Demonstration Video</h2>
+    <div class="page" style="text-align: center; margin: 0px; ">
+        <p>This is where our demonstration video will be</p>
+</body>
+<script>
+function home() {
+    window.location.href = "index.html";
+}
+function project() {
+    window.location.href = "project_info.html";
+}
+function about() {
+    window.location.href = "about_us.html";
+}
+function download(){
+    window.location.href = "download.html";
+}
+function demo(){
+    window.location.href = "demo_video.html";
+}
+</script>
+</html>
