@@ -8,10 +8,6 @@ public class User {
 
 
     public User() {
-        this.full_name = "";
-        this.email = "";
-        this.password = "";
-        this.phone_number = "";
     }
 
 
