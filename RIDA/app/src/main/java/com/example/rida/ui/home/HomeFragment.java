@@ -15,6 +15,8 @@ import com.example.rida.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.sql.Timestamp;
+
 public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
@@ -25,7 +27,8 @@ public class HomeFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("newsfeed");
         //String key = myRef.child("posts").push().getKey();
-        Post post = new Post(author, contents, timestamp);
+        Timestamp ts = new Timestamp(System.currentTimeMillis());
+        Post post = new Post(author, contents, ts.toString());
         myRef.push().setValue(post);
         /*Map<String, Object> postValues = post.toMap();
 
@@ -47,7 +50,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-
+        writeNewPost("author", "hello", "time");
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
 

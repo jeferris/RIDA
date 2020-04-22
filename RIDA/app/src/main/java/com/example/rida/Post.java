@@ -9,9 +9,6 @@ public class Post {
     private String timestamp;
 
     public Post() {
-        this.author = "Author";
-        this.contents = "Content";
-        this.timestamp = "Date and Time";
     }
 
     public Post(String author, String contents, String timestamp) {

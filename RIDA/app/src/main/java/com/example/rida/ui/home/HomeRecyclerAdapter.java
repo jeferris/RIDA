@@ -1,21 +1,28 @@
 package com.example.rida.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rida.Post;
+import com.example.rida.PostDetailActivity;
 import com.example.rida.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
@@ -82,11 +89,13 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+       /*
+        ---This block of code was for debugging. Might want to put a display the newsfeed list here---
+       FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef;
         myRef = database.getReference("newsfeed");
         Post p = new Post("charlie", "hey friends", "yesterday");
-        myRef.push().setValue(p);
+        myRef.push().setValue(p);*/
 
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.content_posts, viewGroup, false);
@@ -96,6 +105,11 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
+        //it appears that this is where we need to implement the data of the posts
+        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef;
+        myRef = database.getReference("newsfeed");
+        DataSnapshot ds = database.onDataChange();*/
         viewHolder.postName.setText(names[i]);
         viewHolder.postContent.setText(contents[i]);
     }
