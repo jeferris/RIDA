@@ -34,7 +34,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         return inflater.inflate();
     }*/
 
-    private String[] names = {
+    /*private String[] names = {
             "Person 1",
             "Person 2",
             "Person 3",
@@ -57,7 +57,16 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             "content 8",
             "content 9",
             "content 10",
-    };
+    };*/
+
+    private DatabaseReference mDatabase;
+    private String[] names;
+    private String[] contents;
+
+    private void writeNewPost() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
