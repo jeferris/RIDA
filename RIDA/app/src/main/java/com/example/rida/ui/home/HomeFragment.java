@@ -8,13 +8,33 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.rida.Post;
 import com.example.rida.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
+
+    private void writeNewPost(String author, String contents, String timestamp) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("newsfeed");
+        //String key = myRef.child("posts").push().getKey();
+        Post post = new Post(author, contents, timestamp);
+        myRef.push().setValue(post);
+        /*Map<String, Object> postValues = post.toMap();
+
+        Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put("/posts/" + key, postValues);
+        childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
+
+        mDatabase.updateChildren(childUpdates);*/
+    }
+
+    /*Need a listener for when a post button is clicked, will call writeNewPost*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

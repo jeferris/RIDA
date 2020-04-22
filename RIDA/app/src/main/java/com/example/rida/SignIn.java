@@ -60,8 +60,8 @@ public class SignIn extends AppCompatActivity {
         password = passwordTV.getText().toString();
                 //Query newQ = nameRef.child("users").child(email).equalTo(email)
                 //.limitToFirst(1);
-       // curRef = database.getReference("currentUserEmail");
-       // curRef.push().setValue(email);
+       curRef = database.getReference("currentUserEmail");
+       curRef.push().setValue(email);
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
             return;
