@@ -20,6 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import android.text.TextUtils;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 
 public class SignIn extends AppCompatActivity {
@@ -47,11 +50,18 @@ public class SignIn extends AppCompatActivity {
     }
 
     private void loginUserAccount() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef, curRef;
+        myRef = database.getReference();
+        DatabaseReference nameRef = database.getReference();
 
         String email, password;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
-
+                //Query newQ = nameRef.child("users").child(email).equalTo(email)
+                //.limitToFirst(1);
+       // curRef = database.getReference("currentUserEmail");
+       // curRef.push().setValue(email);
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
             return;
