@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,7 +43,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         return inflater.inflate();
     }*/
 
-    /*private String[] names = {
+    private String[] names = {
             "Person 1",
             "Person 2",
             "Person 3",
@@ -64,16 +66,16 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             "content 8",
             "content 9",
             "content 10",
-    };*/
+    };
 
-    private DatabaseReference mDatabase;
-    private String[] names;
-    private String[] contents;
+    //private DatabaseReference mDatabase;
+    //private String[] names;
+    //private String[] contents;
 
-    private void writeNewPost() {
+    /*private void writeNewPost() {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-    }
+    }*/
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -99,17 +101,21 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.content_posts, viewGroup, false);
+
+
+
         ViewHolder viewHolder = new ViewHolder(v);
+
+
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         //it appears that this is where we need to implement the data of the posts
-        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef;
-        myRef = database.getReference("newsfeed");
-        DataSnapshot ds = database.onDataChange();*/
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //myRef = database.getReference("newsfeed");
+        //DataSnapshot ds = database.onDataChange();
         viewHolder.postName.setText(names[i]);
         viewHolder.postContent.setText(contents[i]);
     }
