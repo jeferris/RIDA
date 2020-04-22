@@ -38,9 +38,12 @@
     <string name="signout_button_name">signout_button_name</string>
     <string name="title_activity_maps">Hotspots</string>
     <string name="More">More</string>
-    <string name="Gas Cost">Gas Cost</string>
+    <string name="GasCost">Gas Cost</string>
     <string name="addVal">Add</string>
     <string name="Gas_Cost">Gas Cost</string>
     <string name="addVal2">Add to Expense Report</string>
     <string name="Maint_Cost">Maintenance Cost</string>
+    <string name="Earnings">Earnings</string>
+    <string name="GasMaintText">Gas or Maintenance Cost</string>
+    <string name="MileageText">Mileage</string>
 </resources>

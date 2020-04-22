@@ -5,7 +5,7 @@
     android:id="@+id/newsfeed_linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="?android:attr/windowTitleSize"
+    android:layout_marginTop="@dimen/bottom_nav_height"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <com.google.android.material.textfield.TextInputLayout
