@@ -67,7 +67,7 @@ public class NewUser extends AppCompatActivity {
         phone_number = phone_numberTV.getText().toString();
         confirm_pass = confirm_pass_newusrTV.getText().toString();
         User u = new User(full_name, email, password, phone_number);
-        myRef.child("users").child(full_name).setValue(u);
+        myRef.child("users").push().setValue(u);
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();

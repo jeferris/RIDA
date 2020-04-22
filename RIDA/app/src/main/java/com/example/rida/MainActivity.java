@@ -16,11 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef;
-        myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
 
         Button new_acct_main = findViewById(R.id.new_acct_main);
         new_acct_main.setOnClickListener(new View.OnClickListener() {
