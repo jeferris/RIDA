@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -24,8 +26,13 @@ import devs.mulham.horizontalcalendar.utils.CalendarEventsPredicate;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 import com.example.rida.R;
+import com.example.rida.ui.home.HomeRecyclerAdapter;
 
 public class EventsFragment extends Fragment {
+
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.Adapter adapter;
 
     private HorizontalCalendar horizontalCalendar;
 
@@ -34,6 +41,14 @@ public class EventsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_events, container, false);
+
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+
+        layoutManager = new LinearLayoutManager(rootView.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new EventsRecyclerAdapter();
+        recyclerView.setAdapter(adapter);
 
         /* start before 1 month from now */
         Calendar startDate = Calendar.getInstance();
