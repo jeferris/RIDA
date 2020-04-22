@@ -1,10 +1,15 @@
 package com.example.rida.ui.home;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +19,7 @@ import com.example.rida.Post;
 import com.example.rida.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.sql.Timestamp;
 
@@ -22,6 +28,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
+    private DatabaseReference mDatabase;
 
     private void writeNewPost(String author, String contents, String timestamp) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -41,6 +48,14 @@ public class HomeFragment extends Fragment {
 
     /*Need a listener for when a post button is clicked, will call writeNewPost*/
 
+
+    private Button newPostButton;
+    private EditText postContent;
+
+    public EditText getPostContent() {
+        return postContent;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,15 +66,69 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         writeNewPost("author", "hello", "time");
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
-
         layoutManager = new LinearLayoutManager(root.getContext());
         recyclerView.setLayoutManager(layoutManager);
-
         adapter = new HomeRecyclerAdapter();
         recyclerView.setAdapter(adapter);
+
+        newPostButton = (Button) root.findViewById(R.id.new_post_button);
+        postContent = root.findViewById(R.id.newPostText);
+        newPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNewPostClick(v);
+            }
+        });
+
+        //initializePost();
+        //set listener for post button
+
+        /*newPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //onNewPostClick();
+            }
+        });*/
+
         return root;
     }
+
+    /*@Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.new_post_button) {
+        //writeNewPost();
+            Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
+        //return;
+        }
+    }*/
+
+    private void initializePost() {
+
+        newPostButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                onNewPostClick(v);
+            }
+        });
+    }
+    private void onNewPostClick(View v) {
+        String post_contents;
+        post_contents = postContent.getText().toString();
+        if (TextUtils.isEmpty(post_contents)) {
+            Toast.makeText(getContext(), "Please type something to post", Toast.LENGTH_LONG).show();
+            return;
+        }
+        int i = v.getId();
+        if (i == R.id.new_post_button) {
+            //writeNewPost();
+            Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
+            //return;
+        }
+    }
+
+
 
 }
