@@ -113,9 +113,9 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef;
-        myRef = database.getReference();
+        myRef = database.getReference("newsfeed");
         Post p = new Post("charlie", "hey friends", "yesterday");
-        myRef.child("newsfeed").setValue(p);
+        myRef.push().setValue(p);
 
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.content_posts, viewGroup, false);
