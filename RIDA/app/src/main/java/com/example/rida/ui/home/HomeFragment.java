@@ -1,5 +1,6 @@
 package com.example.rida.ui.home;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -51,6 +52,9 @@ public class HomeFragment extends Fragment {
     private Button newPostButton;
     private EditText postContent;
 
+    public EditText getPostContent() {
+        return postContent;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,30 +74,59 @@ public class HomeFragment extends Fragment {
         adapter = new HomeRecyclerAdapter();
         recyclerView.setAdapter(adapter);
 
-        //set listener for post button
+        newPostButton = (Button) root.findViewById(R.id.new_post_button);
+        postContent = root.findViewById(R.id.newPostText);
         newPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onNewPostClick();
+                onNewPostClick(v);
             }
         });
+
+        //initializePost();
+        //set listener for post button
+
+        /*newPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //onNewPostClick();
+            }
+        });*/
 
         return root;
     }
 
-    private void onNewPostClick() {
-        /*String post_contents;
+    /*@Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.new_post_button) {
+        //writeNewPost();
+            Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
+        //return;
+        }
+    }*/
+
+    private void initializePost() {
+
+        newPostButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                onNewPostClick(v);
+            }
+        });
+    }
+    private void onNewPostClick(View v) {
+        String post_contents;
         post_contents = postContent.getText().toString();
         if (TextUtils.isEmpty(post_contents)) {
             Toast.makeText(getContext(), "Please type something to post", Toast.LENGTH_LONG).show();
             return;
-        }*/
-        //int i = v.getId();
-        //if (i == R.id.new_post_button) {
+        }
+        int i = v.getId();
+        if (i == R.id.new_post_button) {
             //writeNewPost();
             Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
             //return;
-        //}
+        }
     }
 
 
