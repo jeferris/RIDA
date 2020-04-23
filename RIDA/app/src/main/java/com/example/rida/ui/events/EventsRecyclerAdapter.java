@@ -7,9 +7,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.rida.Events;
+import com.example.rida.Post;
 import com.example.rida.R;
+import com.google.firebase.database.core.Context;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAdapter.ViewHolder> {
 
@@ -20,6 +26,13 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
     private View onCreateView(Bundle savedInstanceState, LayoutInflater inflater, ViewGroup container) {
         return inflater.inflate();
     }*/
+
+    Context context;
+    ArrayList<Events> events;
+    public EventsRecyclerAdapter(ArrayList<Events> n)
+    {
+        events = n;
+    }
 
     private String[] eventnames = {
             "Event 1",
@@ -33,7 +46,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
             "Event 9",
             "Event 10",
     };
-    private String[] eventinfo = {
+    private String[] eventlocation = {
             "content 1",
             "content 2",
             "content 3",
@@ -45,16 +58,30 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
             "content 9",
             "content 10",
     };
+    private String[] eventdate = {
+            "date 1",
+            "date 2",
+            "date 3",
+            "date 4",
+            "date 5",
+            "date 6",
+            "date 7",
+            "date 8",
+            "date 9",
+            "date 10",
+    };
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView eventName;
-        public TextView eventInfo;
+        public TextView eventLocation;
+        public TextView eventDate;
 
         public ViewHolder(View post) {
             super(post);
             eventName = (TextView) post.findViewById(R.id.event_name);
-            eventInfo = (TextView) post.findViewById(R.id.event_info);
+            eventLocation = (TextView) post.findViewById(R.id.event_location);
+            eventDate = (TextView) post.findViewById(R.id.event_date);
         }
     }
 
@@ -69,7 +96,8 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         viewHolder.eventName.setText(eventnames[i]);
-        viewHolder.eventInfo.setText(eventinfo[i]);
+        viewHolder.eventLocation.setText(eventlocation[i]);
+        viewHolder.eventDate.setText(eventdate[i]);
     }
 
     @Override
