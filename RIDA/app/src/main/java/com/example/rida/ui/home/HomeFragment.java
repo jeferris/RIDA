@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                 {
                     Post p = dataSnapshot1.getValue(Post.class);
-                    newsfeed.add(p);
+                    newsfeed.add(0, p);
                 }
                 adapter = new HomeRecyclerAdapter(newsfeed);
                 recyclerView.setAdapter(adapter);
@@ -147,7 +147,8 @@ public class HomeFragment extends Fragment {
         if (i == R.id.new_post_button) {
             //writeNewPost();
             Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
-            Post p = new Post("me", post_contents, "now");
+            Timestamp ts = new Timestamp(System.currentTimeMillis());
+            Post p = new Post("me", post_contents, ts.toString());
             myRef.push().setValue(p);
             //return;
         }
