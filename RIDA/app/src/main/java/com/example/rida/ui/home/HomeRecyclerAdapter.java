@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,8 +22,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Context;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
@@ -42,6 +46,13 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     /*private View onCreateView(Bundle savedInstanceState, LayoutInflater inflater, ViewGroup container) {
         return inflater.inflate();
     }*/
+
+    Context context;
+    ArrayList<Post> newsfeed;
+    public HomeRecyclerAdapter(ArrayList<Post> n)
+    {
+        newsfeed = n;
+    }
 
     private String[] names = {
             "Person 1",
@@ -81,11 +92,13 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
         public TextView postName;
         public TextView postContent;
+        public TextView postTime;
 
         public ViewHolder(View post) {
             super(post);
             postName = (TextView) post.findViewById(R.id.post_name);
             postContent = (TextView) post.findViewById(R.id.post_content);
+            postTime = (TextView) post.findViewById(R.id.post_time);
         }
     }
 
@@ -116,13 +129,14 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
         //myRef = database.getReference("newsfeed");
         //DataSnapshot ds = database.onDataChange();
-        viewHolder.postName.setText(names[i]);
-        viewHolder.postContent.setText(contents[i]);
+        viewHolder.postName.setText(newsfeed.get(i).getAuthor());
+        viewHolder.postContent.setText(newsfeed.get(i).getContents());
+        viewHolder.postTime.setText(newsfeed.get(i).getTimestamp());
     }
 
     @Override
     public int getItemCount() {
-        return names.length;
+        return newsfeed.size();
     }
 
 }
