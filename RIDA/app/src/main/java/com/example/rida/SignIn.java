@@ -14,15 +14,22 @@ import androidx.annotation.NonNull;
 
 
 import com.example.rida.ui.events.EventsFragment;
+import com.example.rida.ui.home.HomeRecyclerAdapter;
 import com.example.rida.ui.hotspots.HotspotsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import android.text.TextUtils;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class SignIn extends AppCompatActivity {
@@ -31,7 +38,8 @@ public class SignIn extends AppCompatActivity {
     private Button loginBtn;
 
     private FirebaseAuth mAuth;
-
+    public User currentUser= new User();
+    public String currentUserEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +68,23 @@ public class SignIn extends AppCompatActivity {
         password = passwordTV.getText().toString();
                 //Query newQ = nameRef.child("users").child(email).equalTo(email)
                 //.limitToFirst(1);
-       curRef = database.getReference("currentUserEmail");
+       curRef = database.getReference().child("users");
+       // String myUserId = getUid();
+       /* Query curUserQuery = curRef.child("email").limitToFirst(1).equalTo(email);
+        curUserQuery.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                currentUser = dataSnapshot.getValue(User.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //Toast.makeText(HomeFragment.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
+            }
+        });*/
        curRef.push().setValue(email);
+
+       currentUserEmail = email;
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
             return;

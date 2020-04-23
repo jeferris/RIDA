@@ -54,7 +54,11 @@ public class ExpensesRecyclerAdapter extends RecyclerView.Adapter<ExpensesRecycl
         //myRef = database.getReference("newsfeed");
         //DataSnapshot ds = database.onDataChange();
         viewHolder.expenseName.setText(cardTitles[i]);
-        viewHolder.expenseTotal.setText("$" + cardVals[i]);
+        if(i==2){
+            viewHolder.expenseTotal.setText("" + cardVals[i]);
+        }else {
+            viewHolder.expenseTotal.setText("$" + cardVals[i]);
+        }
     }
 
     @Override
