@@ -33,28 +33,6 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
 
-
-
-    Context context;
-    ArrayList<Post> newsfeed;
-    public HomeRecyclerAdapter(ArrayList<Post> n)
-    {
-        newsfeed = n;
-    }
-
-
-    /*private class Feed {
-
-    }*/
-   /* private void onCreate() {
-
-
-    }
-
-    /*private View onCreateView(Bundle savedInstanceState, LayoutInflater inflater, ViewGroup container) {
-        return inflater.inflate();
-    }*/
-
     Context context;
     ArrayList<Post> newsfeed;
     public HomeRecyclerAdapter(ArrayList<Post> n)

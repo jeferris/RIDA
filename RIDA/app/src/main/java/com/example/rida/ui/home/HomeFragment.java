@@ -105,37 +105,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //initializePost();
-        //set listener for post button
-
-        /*newPostButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //onNewPostClick();
-            }
-        });*/
-
         return root;
     }
 
-    /*@Override
-    public void onClick(View v) {
-        int i = v.getId();
-        if (i == R.id.new_post_button) {
-        //writeNewPost();
-            Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
-        //return;
-        }
-    }*/
-
-    private void initializePost() {
-
-        newPostButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                onNewPostClick(v);
-            }
-        });
-    }
     private void onNewPostClick(View v) {
         String post_contents;
         post_contents = postContent.getText().toString();
@@ -145,15 +117,11 @@ public class HomeFragment extends Fragment {
         }
         int i = v.getId();
         if (i == R.id.new_post_button) {
-            //writeNewPost();
             Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
             Timestamp ts = new Timestamp(System.currentTimeMillis());
             Post p = new Post("me", post_contents, ts.toString());
             myRef.push().setValue(p);
-            //return;
         }
     }
-
-
 
 }
