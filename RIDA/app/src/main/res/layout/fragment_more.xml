@@ -4,18 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/bottom_nav_height"
+    android:layout_marginBottom="@dimen/bottom_nav_height"
     tools:context=".MoreFragment">
+
+    <Button
+        android:id="@+id/profile_button"
+        android:layout_width="258dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/profile_button_name"
+        android:textColor="@color/logo_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/messages_button"
         android:layout_width="258dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:text="@string/messages_button_name"
+        android:textColor="@color/logo_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_button" />
 
@@ -24,37 +39,23 @@
         android:layout_width="258dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:text="@string/settings_button_name"
+        android:textColor="@color/logo_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messages_button" />
-
-    <Button
-        android:id="@+id/profile_button"
-        android:layout_width="258dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/profile_button_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/help_button"
         android:layout_width="258dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:text="@string/help_button_name"
+        android:textColor="@color/logo_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_button" />
 
@@ -63,11 +64,11 @@
         android:layout_width="258dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:text="@string/signout_button_name"
+        android:textColor="@color/logo_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/help_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
