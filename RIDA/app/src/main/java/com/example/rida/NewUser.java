@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import android.text.TextUtils;
 
 
@@ -54,14 +57,17 @@ public class NewUser extends AppCompatActivity {
 
     private void registerNewUser() {
 
-
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef;
+        myRef = database.getReference();
         String email, password, full_name, phone_number, confirm_pass;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
         full_name = full_nameTV.getText().toString();
         phone_number = phone_numberTV.getText().toString();
         confirm_pass = confirm_pass_newusrTV.getText().toString();
-        User u = new User();
+        User u = new User(full_name, email, password, phone_number);
+        myRef.child("users").push().setValue(u);
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
