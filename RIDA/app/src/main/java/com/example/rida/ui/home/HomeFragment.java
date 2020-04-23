@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.rida.MainActivity;
 import com.example.rida.Post;
 import com.example.rida.R;
 import com.google.firebase.database.DataSnapshot;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
+
     DatabaseReference myRef;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -37,21 +39,14 @@ public class HomeFragment extends Fragment {
     ArrayList<Post> newsfeed;
     private DatabaseReference mDatabase;
 
-    private void writeNewPost(String author, String contents, String timestamp) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("newsfeed");
+    /*private void writeNewPost(String author, String contents, String timestamp) {
+
         //String key = myRef.child("posts").push().getKey();
         Timestamp ts = new Timestamp(System.currentTimeMillis());
         Post post = new Post(author, contents, ts.toString());
         myRef.push().setValue(post);
-        /*Map<String, Object> postValues = post.toMap();
 
-        Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/posts/" + key, postValues);
-        childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
-
-        mDatabase.updateChildren(childUpdates);*/
-    }
+    }*/
 
     /*Need a listener for when a post button is clicked, will call writeNewPost*/
 
@@ -72,9 +67,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        //writeNewPost("author", "hello", "time");
+       // writeNewPost("author", "hello", "time");
 
-        myRef = FirebaseDatabase.getInstance().getReference().child("Profiles");
+        myRef = FirebaseDatabase.getInstance().getReference().child("newsfeed");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -94,12 +89,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(root.getContext());
         recyclerView.setLayoutManager(layoutManager);
-
+        //adapter = new HomeRecyclerAdapter();
+        //recyclerView.setAdapter(adapter);
 
         newPostButton = (Button) root.findViewById(R.id.new_post_button);
         postContent = root.findViewById(R.id.newPostText);
@@ -110,9 +105,37 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //initializePost();
+        //set listener for post button
+
+        /*newPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //onNewPostClick();
+            }
+        });*/
+
         return root;
     }
 
+    /*@Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.new_post_button) {
+        //writeNewPost();
+            Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
+        //return;
+        }
+    }*/
+
+    private void initializePost() {
+
+        newPostButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                onNewPostClick(v);
+            }
+        });
+    }
     private void onNewPostClick(View v) {
         String post_contents;
         post_contents = postContent.getText().toString();
@@ -124,6 +147,8 @@ public class HomeFragment extends Fragment {
         if (i == R.id.new_post_button) {
             //writeNewPost();
             Toast.makeText(getContext(), "newPostButton pressed", Toast.LENGTH_LONG).show();
+            Post p = new Post("me", post_contents, "now");
+            myRef.push().setValue(p);
             //return;
         }
     }

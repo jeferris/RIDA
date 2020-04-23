@@ -35,6 +35,14 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
 
 
+    Context context;
+    ArrayList<Post> newsfeed;
+    public HomeRecyclerAdapter(ArrayList<Post> n)
+    {
+        newsfeed = n;
+    }
+
+
     /*private class Feed {
 
     }*/
