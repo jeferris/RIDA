@@ -14,6 +14,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:hint="What's on your mind?"
+        android:textColorHint="@color/logo_color"
         app:layout_constraintEnd_toStartOf="@+id/new_post_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Post"
+        android:textColor="@color/logo_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/newPostText"
