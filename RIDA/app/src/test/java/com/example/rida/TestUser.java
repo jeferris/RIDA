@@ -37,6 +37,21 @@ public class TestUser extends TestCase {
         assertEquals("phone_number", uCons.getPhone_number());
     }
 
+    public void testAddMiles(){
+        uCons.addMiles(5.0);
+        assertEquals(5.0, uCons.getMiles());
+    }
+
+    public void testAddEarnings(){
+        uCons.addEarnings(5.0);
+        assertEquals(5.0, uCons.getEarnings());
+    }
+
+    public void testAddExpenses(){
+        uCons.addExpenses(5.0);
+        assertEquals(5.0, uCons.getExpenses());
+    }
+
     public void testSetEmail(){
         //set email to test@email.com
         u.setEmail("test@email.com");
